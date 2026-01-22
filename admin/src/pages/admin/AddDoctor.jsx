@@ -1,0 +1,183 @@
+import React,{useState,useContext} from 'react'
+import { assets } from '../../assets/assets'
+import { AdminContext } from '../../context/AdminContext';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+
+const AddDoctor = () => {
+    const [docImg,setDocImg] = useState(false);
+    const [name,setName] = useState('');
+    const [email,setEmail]=useState('');
+    const [password,setPassword]=useState('');
+    const [experience,setExperience]=useState('1 Year');
+    const [speciality,setSpeciality]=useState('General Physician');
+    const [degree,setDegree]=useState('');
+    const [fees,setFees]=useState('');
+    const [about,setAbout]=useState('');
+    const [address1,setAddress1]=useState('');
+    const [address2,setAddress2]=useState('');
+    
+    const  {backendUrl,aToken} = useContext(AdminContext);
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+        try {
+            if(!docImg){
+                return toast.error('image not selected.')
+            }
+            const formData = new FormData();
+            formData.append('image',docImg)
+            formData.append('name',name);
+            formData.append('email',email);
+            formData.append('password',password);
+            formData.append('experience',experience);
+            formData.append('fees',fees);
+            formData.append('about',about);
+            formData.append('speciality',speciality);
+            formData.append('degree',degree);
+            formData.append('address',JSON.stringify({line1:address1,line2:address2}));
+            
+            formData.forEach((value,key)=>{
+                console.log(`${key}-${value}`);
+            })
+
+            const {data} = await axios.post(backendUrl+'/api/admin/add-doctor',formData,{headers:{aToken}});
+            if(data.success){
+                toast.success(data.message);
+                setDocImg(false);
+                setName('');
+                setPassword('');
+                setEmail('');
+                setAddress1('');
+                setAddress2('');
+                setAbout('');
+                setExperience('');
+                setFees('');
+                setDegree('');
+            }else{
+                toast.error(data.message)
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message);
+        }
+
+    } 
+  return (
+    <form className='m-5 w-full' onSubmit={handleSubmit}>
+      <p className='mb-3 text-lg font-medium'>Add Doctor</p>
+
+      <div className='bg-whtie px-8 py-8 shadow-md rounded w-full max-w-4xl max-h-[80vh] overflow-x-scroll'>
+
+        {/* Upload */}
+        <div className='flex items-center gap-4 mb-8 text-gray-500'>
+          <label htmlFor="doc-img">
+            <img 
+              className='w-16 bg-gray-100 rounded-full cursor-pointer'
+              src={docImg ? URL.createObjectURL(docImg) :assets.upload_area  }
+              alt=""
+            />
+          </label>
+          <input onChange={(e)=>setDocImg(e.target.files[0])}  type="file" id="doc-img" hidden />
+          <p>Upload doctor <br /> picture</p>
+        </div>
+
+        {/* FORM CONTENT */}
+        <div className='flex flex-col gap-6 text-gray-600'>
+
+          {/* Row 1 */}
+          <div className='flex flex-col lg:flex-row gap-6'>
+            <div className='flex-1 flex flex-col gap-1'>
+              <p>Doctor Name</p>
+              <input value={name} onChange={(e)=>setName(e.target.value)} className='border rounded px-3 py-2 border-gray-300' type="text" placeholder='enter doctor name' required />
+            </div>
+
+            <div className='flex-1 flex flex-col gap-1'>
+              <p>Doctor Email</p>
+              <input className='border rounded px-3 py-2 border-gray-300' onChange={(e)=>setEmail(e.target.value)} value={email} type="email" placeholder='enter doctor email' required />
+            </div>
+          </div>
+
+          {/* Row 2 */}
+          <div className='flex flex-col lg:flex-row gap-6'>
+            <div className='flex-1 flex flex-col gap-1'>
+              <p>Doctor Password</p>
+              <input onChange={(e)=>setPassword(e.target.value)} value={password} className='border rounded px-3 py-2 border-gray-300' type="password" placeholder='enter doctor password' required />
+            </div>
+
+            <div className='flex-1 flex flex-col gap-1'>
+              <p>Doctor Experience</p>
+              <select onChange={(e)=>setExperience(e.target.value)} value={experience} className='border rounded px-3 py-2 border-gray-300'>
+                <option value="1 year">1 year</option>
+                <option value="2 years">2 years</option>
+                <option value="3 years">3 years</option>
+                <option value="4 years">4 years</option>
+                <option value="5 years">5 years</option>
+                <option value="6 years">6 years</option>
+                <option value="7 years">7 years</option>
+                <option value="8 years">8 years</option>
+                <option value="9 years">9 years</option>
+                <option value="10 years">10 years</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Row 3 */}
+          <div className='flex flex-col lg:flex-row gap-6'>
+            <div className='flex-1 flex flex-col gap-1'>
+              <p>Doctor Speciality</p>
+              <select onChange={(e)=>setSpeciality(e.target.value)} value={speciality} className='border rounded px-3 py-2 border-gray-300'>
+                <option value="General physician">General physician</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Gynecologist">Gynecologist</option>
+                <option value="Pediatricians">Pediatricians</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+              </select>
+            </div>
+
+            <div className='flex-1 flex flex-col gap-1'>
+              <p>Education</p>
+              <input onChange={(e)=>setDegree(e.target.value)} value={degree} className='border rounded px-3 py-2 border-gray-300' type="text" placeholder='Education' required />
+            </div>
+          </div>
+
+          {/* Address */}
+          <div className='flex flex-col gap-1 border-gray-300'>
+            <p>Address</p>
+            <div className='flex flex-col lg:flex-row gap-6'>
+              <input onChange={(e)=>setAddress1(e.target.value)} value={address1}
+                type="text"
+                placeholder='Enter address line1'
+                required
+                className='border rounded px-3 py-2 flex-1 border-gray-300'
+              />
+              <input onChange={(e)=>setAddress2(e.target.value)} value={address2}
+                type="text"
+                placeholder='Enter address line2'
+                required
+                className='border rounded px-3 py-2 flex-1 border-gray-300'
+              />
+            </div>
+          </div>
+          <div className='flex-1 flex flex-col gap-1'>
+              <p>Doctor Fees</p>
+              <input className='border rounded px-3 py-2 border-gray-300' onChange={(e)=>setFees(e.target.value)} value={fees} type="number" placeholder='enter doctor email' required />
+            </div>
+
+          {/* About */}
+          <div className='flex flex-col gap-1'>
+            <p className='mt-4 mb-2'>About Doctor</p>
+            <textarea onChange={(e)=>setAbout(e.target.value)} value={about} className='w-full px-4 pt-2 border rounded border-gray-300' placeholder='Enter doctor about'></textarea>
+          </div>
+
+          <button className='w-full bg-primary py-3 text-white font-semibold cursor-pointer rounded-lg'>Add Doctor</button>
+        </div>
+      </div>
+    </form>
+  )
+}
+
+export default AddDoctor
+
+

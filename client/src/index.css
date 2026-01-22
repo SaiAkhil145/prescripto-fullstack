@@ -1,0 +1,43 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #5f6FFF;  
+  --color-secondary: #eb6bd8;
+  --grid-cols-auto: repeat(auto-fill, minmax(200px, 1fr));
+
+}
+body{
+  font-family: poppins;
+}
+
+.active hr{
+  @apply block;
+}
+
+::-webkit-scrollbar{
+  @apply hidden
+}
+
+@media (max-width:740px) {
+  .active p{
+    @apply text-white bg-primary
+  }
+}
+
+
+.custom-success-toast {
+  background: #16a34a !important; /* green */
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.custom-error-toast {
+  background: #dc2626 !important; /* red */
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+}
