@@ -10,7 +10,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const { token, setToken,userData } = useContext(AppContext);
+  const { token, setToken, userData } = useContext(AppContext);
 
   const logout = () => {
     setToken(false);
@@ -62,15 +62,18 @@ const Navbar = () => {
 
       {/* Right Side */}
       <div className="flex items-center gap-4">
-        {token ? (
+        {token && userData ? (
           <div className="relative">
             <img
               onClick={(e) => {
                 e.stopPropagation();
                 setShowDropdown((prev) => !prev);
               }}
-              className="w-9 h-9 rounded-full shadow-lg cursor-pointer"
-              src={userData.image}
+              className="w-9 h-9 rounded-full shadow-lg cursor-pointer object-cover"
+              src={
+                userData?.image ||
+                "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              }
               alt="profile"
             />
 
