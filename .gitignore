@@ -1,0 +1,6 @@
+# .gitignore
+.env
+backend/.env
+client/.env
+admin/.env
+node_modules/
