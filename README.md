@@ -164,64 +164,45 @@
 ### 🏠 Landing Page
 *Beautiful hero section with doctor search functionality*
 
-<img src="https://via.placeholder.com/900x500/4158D0/ffffff?text=Homepage+Screenshot+Here" alt="Homepage" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<img width="1919" height="915" alt="image" src="https://github.com/user-attachments/assets/8a00deda-dc77-4a13-82f2-c598fc38819c" />
 
 ---
 
 ### 👨‍⚕️ Doctor Listings
 *Browse and filter doctors by specialty and availability*
 
-<img src="https://via.placeholder.com/900x500/C850C0/ffffff?text=Doctor+Listing+Screenshot+Here" alt="Doctor Listing" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/aa04445e-d3e6-45c3-acab-4d00707ada46" />
 
 ---
 
 ### 📋 Doctor Profile
 *Detailed information about doctors including qualifications and reviews*
-
-<img src="https://via.placeholder.com/900x500/FFCC70/ffffff?text=Doctor+Profile+Screenshot+Here" alt="Doctor Profile" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/c79dd279-8e26-449b-aae8-b3342e15b137" />
 
 ---
 
 ### 📅 Appointment Booking
-*Interactive calendar with real-time slot selection*
+*Interactive calendar with real-time slot sel<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/034828e6-36e5-4bc5-bc0f-c74d52541c28" />
+ection*
 
-<img src="https://via.placeholder.com/900x500/4158D0/ffffff?text=Appointment+Booking+Screenshot+Here" alt="Appointment Booking" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
-
----
-
-### 👤 User Dashboard
-*Manage appointments and personal health records*
-
-<img src="https://via.placeholder.com/900x500/C850C0/ffffff?text=User+Dashboard+Screenshot+Here" alt="User Dashboard" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<img width="1919" height="912" alt="image" src="https://github.com/user-attachments/assets/f9915238-6275-4a41-8973-defb7bce1650" />
 
 ---
 
 ### ⚙️ Admin Panel
 *Powerful administration dashboard with analytics*
 
-<img src="https://via.placeholder.com/900x500/FFCC70/ffffff?text=Admin+Dashboard+Screenshot+Here" alt="Admin Dashboard" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<img width="1918" height="909" alt="image" src="https://github.com/user-attachments/assets/e7fdfdd2-717e-4668-b693-9839b0189d6b" />
 
 ---
 
 ### 💳 Payment Gateway
 *Secure payment processing with multiple options*
 
-<img src="https://via.placeholder.com/900x500/4158D0/ffffff?text=Payment+Gateway+Screenshot+Here" alt="Payment Gateway" width="90%" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/56b82294-86d0-4db6-b866-362f453151d7" />
 
 ---
 
-### 📱 Mobile Responsive
-*Fully responsive design for seamless mobile experience*
-
-<div align="center">
-<img src="https://via.placeholder.com/300x600/C850C0/ffffff?text=Mobile+View+1" alt="Mobile View 1" width="28%" style="border-radius: 10px; margin: 0 10px;"/>
-<img src="https://via.placeholder.com/300x600/FFCC70/ffffff?text=Mobile+View+2" alt="Mobile View 2" width="28%" style="border-radius: 10px; margin: 0 10px;"/>
-<img src="https://via.placeholder.com/300x600/4158D0/ffffff?text=Mobile+View+3" alt="Mobile View 3" width="28%" style="border-radius: 10px; margin: 0 10px;"/>
-</div>
-
-</div>
-
-> **Note:** Replace placeholder images with actual screenshots of your application. You can use tools like [Screely](https://screely.com/) or [Screenshot.rocks](https://screenshot.rocks/) to create beautiful mockups.
 
 ---
 
